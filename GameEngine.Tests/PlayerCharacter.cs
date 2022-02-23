@@ -40,5 +40,37 @@ namespace GameEngine.Tests
 
             Assert.Equal(100, result);
         }
+
+        [Fact]
+        public void PlayerCharacter_TakingZeroDamage_ShouldHaveNoEffectOnHealth()
+        {
+            _sut.TakeDamage(0);
+
+            Assert.Equal(100, _sut.Health);
+        }
+
+        [Fact]
+        public void PlayerCharacter_TakingMinorDamage_ShouldReduceHealthSlightly()
+        {
+            _sut.TakeDamage(1);
+
+            Assert.Equal(99, _sut.Health);
+        }
+
+        [Fact]
+        public void PlayerCharacter_TakingMediumDamage_ShouldReduceHealthModerately()
+        {
+            _sut.TakeDamage(50);
+
+            Assert.Equal(50, _sut.Health);
+        }
+
+        [Fact]
+        public void PlayerCharacter_TakingLargeDamage_ShouldReduceHealthTo1()
+        {
+            _sut.TakeDamage(101);
+
+            Assert.Equal(1, _sut.Health);
+        }
     }
 }
