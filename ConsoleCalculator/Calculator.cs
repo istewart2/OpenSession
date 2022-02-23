@@ -4,6 +4,11 @@
     {
         public int Calculate(int number1, int number2, string operation)
         {
+            if (operation is null)
+            { 
+                throw new ArgumentNullException(nameof(operation));
+            }
+
             if (operation == "/")
             {
                 return Divide(number1, number2);

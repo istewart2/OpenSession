@@ -29,11 +29,21 @@
                 int result = calculator.Calculate(number1, number2, operation);
                 DisplayResult(result);
             }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine($"No mathemetical operator was provided: {ex}");
+                // log the error
+            }
             catch (ArgumentOutOfRangeException ex)
             {
                 Console.WriteLine($"An invalid mathemetical operator was provided: {ex}");
                 // log the error
                 // implement logic to avoid the exception happening
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Something went wrong: {ex}");
+                // log the error
             }
 
             #endregion
