@@ -58,6 +58,15 @@ namespace AutoFixtureDemo.Tests
 
             List<string> testListOfStrings = new List<string>();
             fixture.AddManyTo(testListOfStrings, 10);
+
+            // autofixture claims to improve test readability, make it easier to maintain tests
+            // and make developers more productive when writing tests
+
+            // can simplify the arrange phase of arrange, act, assert
+            // lets you focus on what’s being tested, rather than how to setup the test scenario
+
+            // uses anonymous test data - required for test to run, but values are unimportant
+
         }
     }
 }
