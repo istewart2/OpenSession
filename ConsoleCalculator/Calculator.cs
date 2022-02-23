@@ -11,7 +11,18 @@
 
             if (operation == "/")
             {
-                return Divide(number1, number2);
+                try
+                {
+                    return Divide(number1, number2);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine($"The value cannot be divided by zero: {ex}");
+                    // log the error
+                    // re-throw excpetion to be caught further up the chain 
+                    // do not use 'throw ex' because you will lose stack trace
+                    throw;
+                }
             }
             else
             {
