@@ -1,4 +1,4 @@
-﻿namespace ErrorHandling
+﻿namespace ConsoleCalculator
 {
     public class Calculator
     {
@@ -18,4 +18,3 @@
         private int Divide(int number, int divisor) => number / divisor;
     }
 }
-

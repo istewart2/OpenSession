@@ -1,6 +1,6 @@
-﻿namespace ErrorHandling
+﻿namespace ConsoleCalculator
 {
-    public class ErrorExample
+    public static class ErrorExample
     {
         // an exception is any error or unexpected behaviour that's encountered by a program
 
