@@ -1,16 +1,24 @@
-﻿using System;
-using System.IO;
-
-namespace ErrorHandling
+﻿namespace ErrorHandling
 {
     public class ErrorExample
     {
+        // an exception is any error or unexpected behaviour that's encountered by a program
+
         // errors can happen due to bugs in the code, network problems or hardware failures
+
         // exception handling lets us handle errors in a structured way
-            // stop the program from crashing
-            // retry the operation(eg.make another HTTP request)
-            // provide a meaningful message to the user
-            // log the error
+          // stop the program from crashing
+          // retry the operation(eg.make another HTTP request)
+          // provide a meaningful message to the user
+          // log the error
+
+        // type of the exception class represents the type of issue that occurred
+        // all exceptions ultimately inherit from the base System.Exception class
+        // see: https://docs.microsoft.com/en-us/dotnet/api/system.exception?view=net-6.0#choosing-standard-exceptions
+
+        // if we run the test we can see that the excpetion class has a message and stack trace property
+          // message describes the reason for the exception
+          // stack trace shows where the exception was thrown and what led to it
 
         public static void ReadFromFile()
         {
