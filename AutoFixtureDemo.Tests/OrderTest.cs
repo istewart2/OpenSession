@@ -92,5 +92,39 @@ namespace AutoFixtureDemo.Tests
             // assert
             Assert.Equal($"{id}--{customerName}", result);
         }
+
+        [Fact]
+        public void BuildCustomObject()
+        {
+            // arrange
+            var fixture = new Fixture();
+
+            var order = fixture.Build<Order>()
+                .With(x => x.OrderDate, new DateTime(2022, 12, 25))
+                .Without(x => x.Items)
+                .Do(x => x.Items.Add(new OrderItem()
+                {
+                    ProductName = "TestProduct3",
+                    Quantity = 5
+                }))
+                .Create();
+        }
+
+        [Fact]
+        public void BuildMultipleCustomObjects()
+        {
+            // arrange
+            var fixture = new Fixture();
+
+            fixture.Customize<Customer>(c =>
+            c.With(x => x.CustomerName, "TestCustomer"));
+
+            fixture.Customize<Order>(order =>
+               order.With(x => x.OrderDate, new DateTime(2022, 12, 25)));
+
+            var order1 = fixture.Create<Order>();
+            var order2 = fixture.Create<Order>();
+            var order3 = fixture.Create<Order>();
+        }
     }
 }
