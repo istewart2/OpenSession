@@ -74,10 +74,7 @@ namespace GameEngine.Tests
         }
 
         [Theory]
-        [InlineData(0, 100)]
-        [InlineData(1, 99)]
-        [InlineData(50, 50)]
-        [InlineData(101, 1)]
+        [MemberData(nameof(HealthDamageTestData.TestData), MemberType = typeof(HealthDamageTestData))]
         public void PlayerCharacter_TakingDamage_ShouldReduceHealth(int damage, int expectedHealth)
         {
             _sut.TakeDamage(damage);
