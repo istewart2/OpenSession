@@ -1,5 +1,6 @@
 using AutoFixture;
 using System;
+using System.Collections.Generic;
 using System.Net.Mail;
 using Xunit;
 
@@ -46,6 +47,17 @@ namespace AutoFixtureDemo.Tests
             var testGuid = fixture.Create<Guid>();
             var testEnum = fixture.Create<NameJoiner.FormalTitle>();
             var testEmail = fixture.Create<MailAddress>();
+        }
+
+        [Fact]
+        public void NotATest_CreatingMultipleValues()
+        {
+            var fixture = new Fixture();
+
+            IEnumerable<int> numbers = fixture.CreateMany<int>(12);
+
+            List<string> testListOfStrings = new List<string>();
+            fixture.AddManyTo(testListOfStrings, 10);
         }
     }
 }
