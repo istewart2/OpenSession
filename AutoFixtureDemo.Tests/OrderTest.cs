@@ -41,6 +41,13 @@ namespace AutoFixtureDemo.Tests
         public void AutoCreation()
         {
             var fixture = new Fixture();
+
+            // inject a specific value - this will be used for all instances of customer
+            fixture.Inject(new Customer
+            {
+                CustomerName = "John Smith"
+            });
+
             var order = fixture.Create<Order>();
 
             // act
