@@ -23,8 +23,18 @@
             #region Setup Calculator
 
             var calculator = new Calculator();
-            int result = calculator.Calculate(number1, number2, operation);
-            DisplayResult(result);
+
+            try
+            {
+                int result = calculator.Calculate(number1, number2, operation);
+                DisplayResult(result);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine($"An invalid mathemetical operator was provided: {ex}");
+                // log the error
+                // implement logic to avoid the exception happening
+            }
 
             #endregion
 
