@@ -8,6 +8,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoFixtureDemo", "AutoFixt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleCalculator", "ConsoleCalculator\ConsoleCalculator.csproj", "{D69D4455-C174-4296-BA4E-5FD5907D4ECE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngine.Tests", "GameEngine.Tests\GameEngine.Tests.csproj", "{7030DC28-A73F-4149-AEED-915C599F08DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,18 @@ Global
 		{D69D4455-C174-4296-BA4E-5FD5907D4ECE}.Release|x64.Build.0 = Release|Any CPU
 		{D69D4455-C174-4296-BA4E-5FD5907D4ECE}.Release|x86.ActiveCfg = Release|Any CPU
 		{D69D4455-C174-4296-BA4E-5FD5907D4ECE}.Release|x86.Build.0 = Release|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Debug|x64.Build.0 = Debug|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Release|x64.ActiveCfg = Release|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Release|x64.Build.0 = Release|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{7030DC28-A73F-4149-AEED-915C599F08DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
