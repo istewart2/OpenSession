@@ -1,17 +1,19 @@
-﻿using Xunit;
+﻿using AutoFixture.Xunit2;
+using Xunit;
 
 namespace AutoFixtureDemo.Tests
 {
     public class CalculatorTest
     {
-        [Fact]
-        public void AddTwoPositiveNumbers()
+        [Theory]
+        [AutoData]
+        public void AddTwoPositiveNumbers(int a, int b)
         {
             var sut = new Calculator();
-            sut.Add(1);
-            sut.Add(2);
+            sut.Add(a);
+            sut.Add(b);
 
-            Assert.Equal(1 + 2, sut.Value);
+            Assert.Equal(a + b, sut.Value);
         }
 
         [Fact]
