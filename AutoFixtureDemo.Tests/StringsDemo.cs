@@ -1,4 +1,6 @@
 using AutoFixture;
+using System;
+using System.Net.Mail;
 using Xunit;
 
 namespace AutoFixtureDemo.Tests
@@ -32,6 +34,18 @@ namespace AutoFixtureDemo.Tests
 
             // assert
             Assert.Equal(firstName + ' ' + lastName, result);
+        }
+
+        [Fact]
+        public void NotATest_JustRandomStuff()
+        {
+            var fixture = new Fixture();
+            var testInt = fixture.Create<int>();
+            var testDecimal = fixture.Create<decimal>();
+            var testDateTime = fixture.Create<DateTime>();
+            var testGuid = fixture.Create<Guid>();
+            var testEnum = fixture.Create<NameJoiner.FormalTitle>();
+            var testEmail = fixture.Create<MailAddress>();
         }
     }
 }
