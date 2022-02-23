@@ -7,9 +7,8 @@ namespace AutoFixtureDemo.Tests
     {
         [Theory]
         [AutoData]
-        public void AddTwoPositiveNumbers(int a, int b)
+        public void AddTwoPositiveNumbers(int a, int b, Calculator sut)
         {
-            var sut = new Calculator();
             sut.Add(a);
             sut.Add(b);
 
