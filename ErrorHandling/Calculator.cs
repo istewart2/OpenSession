@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConsoleCalculator
+﻿namespace ErrorHandling
 {
     public class Calculator
     {
