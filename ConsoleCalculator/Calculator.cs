@@ -28,6 +28,8 @@
             {
                 // program doesn't crash if we enter '+' but would be better if we throw an exception
                 // we don't want this exception to 'bubble up' to the operating system, so should catch it
+                // look at custom exception in EnemyCreationExcpetion class
+                // we'll also look at testing for exceptions later
                 throw new ArgumentOutOfRangeException(nameof(operation), "The operator provided is not supported");
                 
             }
