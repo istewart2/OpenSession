@@ -6,6 +6,18 @@ namespace AutoFixtureDemo.Tests
     public class CalculatorTest
     {
         [Theory]
+        [InlineAutoData]
+        [InlineAutoData(0)]
+        [InlineAutoData(-5)]
+        public void Add(int a, int b, Calculator sut)
+        {
+            sut.Add(a);
+            sut.Add(b);
+
+            Assert.Equal(a + b, sut.Value);
+        }
+
+        [Theory]
         [AutoData]
         public void AddTwoPositiveNumbers(int a, int b, Calculator sut)
         {
