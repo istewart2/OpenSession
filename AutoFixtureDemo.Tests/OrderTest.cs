@@ -53,5 +53,44 @@ namespace AutoFixtureDemo.Tests
             // act
             // assert
         }
+
+        [Fact]
+        public void FreezingValues()
+        {
+            // arrange
+            var fixture = new Fixture();
+
+            var id = fixture.Create<int>();
+            fixture.Inject(id);
+
+            var customerName = fixture.Create<string>();
+            fixture.Inject(customerName);
+
+            var sut = fixture.Create<Order>();
+
+            // act
+            var result = sut.ToString();
+
+            // assert
+            Assert.Equal($"{id}--{customerName}", result);
+        }
+
+        [Fact]
+        public void FreezingValuesConcise()
+        {
+            // arrange
+            var fixture = new Fixture();
+
+            var id = fixture.Freeze<int>();
+            var customerName = fixture.Freeze<string>();
+
+            var sut = fixture.Create<Order>();
+
+            // act
+            var result = sut.ToString();
+
+            // assert
+            Assert.Equal($"{id}--{customerName}", result);
+        }
     }
 }
