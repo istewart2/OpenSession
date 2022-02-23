@@ -10,8 +10,10 @@
             }
             else
             {
-                Console.WriteLine("Unknown operation.");
-                return 0;
+                // program doesn't crash if we enter '+' but would be better if we throw an exception
+                // we don't want this exception to 'bubble up' to the operating system, so should catch it
+                throw new ArgumentOutOfRangeException(nameof(operation), "The operator provided is not supported");
+                
             }
         }
 
