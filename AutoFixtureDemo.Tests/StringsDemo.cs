@@ -1,8 +1,9 @@
+using AutoFixture;
 using Xunit;
 
 namespace AutoFixtureDemo.Tests
 {
-    public class UnitTest1
+    public class StringsDemo
     {
         // remember to add Autofixture package reference
 
@@ -15,10 +16,22 @@ namespace AutoFixtureDemo.Tests
         // num of downloads - https://www.nuget.org/profiles/AutoFixture/
 
         // quick start guide: https://autofixture.github.io/docs/quick-start/
-        [Fact]
-        public void Test1()
-        {
 
+        [Fact]
+        public void BasicStrings()
+        {
+            // arrange
+            var sut = new NameJoiner();
+            var fixture = new Fixture();
+
+            var firstName = fixture.Create<string>();
+            var lastName = fixture.Create<string>();
+
+            // act
+            var result = sut.Join(firstName, lastName);
+
+            // assert
+            Assert.Equal(firstName + ' ' + lastName, result);
         }
     }
 }
